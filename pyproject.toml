@@ -1,0 +1,17 @@
+[project]
+name = "projetopratico"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Mendel Cruz",email = "mendelcruz@gmail.com"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "streamlit (>=1.63.0,<2.0.0)",
+    "pandas (>=3.0.5,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
