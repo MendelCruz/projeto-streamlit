@@ -7,6 +7,11 @@ def gravar_dados(nome, data_nasc, tipo ):
         with open ("clientes.csv", "a", encoding="utf-8") as file:
             file.write(f"{nome},{data_nasc}, {tipo}\n")
         st.session_state["sucesso"] = True
+        # Resetando campos do formulário
+        st.session_state["nome_cliente"] = ""
+        st.session_state["dt_nascimento"] = date.today()
+        st.session_state["tipo"] = None
+        
     else:
         st.session_state["sucesso"] = False
 
@@ -27,7 +32,8 @@ dt_nascimento = st.date_input("Digite a data de Nascimento",
 
 tipo = st.selectbox("Tipo do Cliente",
                     ["PJ","PF"],
-                    index=None)
+                    index=None,
+                    key="tipo")
 
 btn_cadastrar = st.button("Cadastrar",
                           on_click=gravar_dados,
