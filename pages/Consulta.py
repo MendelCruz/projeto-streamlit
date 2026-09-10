@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 # Carregar os dados
 dados = pd.read_csv("clientes.csv")
